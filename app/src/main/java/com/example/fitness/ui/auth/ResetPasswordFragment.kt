@@ -7,22 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.fitness.R
-import com.example.fitness.databinding.FragmentSignUpBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.fitness.constants.Constants
+import com.example.fitness.databinding.FragmentResetPasswordBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-lateinit var binding: FragmentSignUpBinding
-@AndroidEntryPoint
-class SignUpFragment : Fragment() {
 
+class ResetPasswordFragment : Fragment() {
+
+lateinit var binding: FragmentResetPasswordBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentSignUpBinding.inflate(layoutInflater)
+       binding = FragmentResetPasswordBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -31,6 +34,11 @@ class SignUpFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
+        binding.btnSubmit.setOnClickListener {
+
+            Constants.showCustomAlertDialog(requireContext(),R.layout.dialog_done,true)
+        }
     }
+
 
 }

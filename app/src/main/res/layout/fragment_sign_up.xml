@@ -1,14 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.SignUpFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.auth.SignUpFragment"
+    android:background="@color/dark_grey">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/dark_grey"
+        android:elevation="0dp"
+        android:text="@string/back"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:icon="@drawable/left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:iconTint="@color/white"/>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextNameContainer"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/dark_grey"
+        android:hint="Name"
+        android:textColorHint="#4F4F4F"
+        app:boxStrokeColor="#4F4F4F"
+        app:hintTextColor="#4F4F4F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintVertical_bias="0.15">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:drawableEnd="@drawable/profile_icone"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="#4F4F4F" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextEmailContainer"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/dark_grey"
+        android:hint="Email"
+        android:textColorHint="#4F4F4F"
+        app:boxStrokeColor="#4F4F4F"
+        app:hintTextColor="#4F4F4F"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameContainer"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:drawableEnd="@drawable/email_icon"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="#4F4F4F" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextPasswordContainer"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/dark_grey"
+        android:hint="@string/password"
+        app:boxStrokeColor="#4F4F4F"
+        app:passwordToggleEnabled="true"
+        app:endIconTint="#4F4F4F"
+        app:hintTextColor="#4F4F4F"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailContainer"
+        android:textColorHint="#4F4F4F"
+        app:passwordToggleTint="#4F4F4F"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="#4F4F4F"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTextConfirmPasswordContainer"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/dark_grey"
+        android:hint="Confirm Password"
+        app:boxStrokeColor="#4F4F4F"
+        app:passwordToggleEnabled="true"
+        app:endIconTint="#4F4F4F"
+        app:hintTextColor="#4F4F4F"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordContainer"
+        android:textColorHint="#4F4F4F"
+        app:passwordToggleTint="#4F4F4F"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="#4F4F4F"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:background="@drawable/button_auth_style"
+        android:padding="8dp"
+        android:text="Signup"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias=".20"
+        app:layout_constraintTop_toBottomOf="@id/editTextConfirmPasswordContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
