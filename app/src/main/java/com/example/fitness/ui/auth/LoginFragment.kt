@@ -1,5 +1,6 @@
 package com.example.fitness.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.fitness.R
 import com.example.fitness.databinding.FragmentLoginBinding
+import com.example.fitness.ui.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,6 +37,10 @@ class LoginFragment : Fragment() {
         }
         binding.txtForgetPassword.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgetPasswordFragment);
+        }
+        binding.btnLogin.setOnClickListener{
+            startActivity(Intent(requireContext() , HomeActivity::class.java))
+            requireActivity().finish()
         }
     }
 
