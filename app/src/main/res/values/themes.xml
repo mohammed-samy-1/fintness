@@ -1,10 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Fitness" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Fitness" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorControlActivated">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -13,5 +14,9 @@
         <item name="android:statusBarColor">@color/dark_grey</item>
         <item name="android:windowBackground">@color/dark_grey</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ind" parent="Widget.Material3.NavigationRailView.ActiveIndicator">
+        <item name="android:color">@color/white</item>
     </style>
 </resources>
