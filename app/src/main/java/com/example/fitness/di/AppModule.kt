@@ -3,6 +3,7 @@ package com.example.fitness.di
 import com.example.fitness.repositories.AuthRepo
 import com.example.fitness.repositories.MainRepo
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,12 +20,16 @@ object AppModule {
     }
     @Provides
     @Singleton
-    fun MainRepo(mDatabase: FirebaseDatabase):AuthRepo{
-        return MainRepo(mDatabase)
+    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):AuthRepo{
+        return MainRepo(mDatabase, mStorage)
     }
 
     @Provides
     fun db():FirebaseDatabase{
         return FirebaseDatabase.getInstance()
+    }
+    @Provides
+    fun storage():FirebaseStorage{
+        return FirebaseStorage.getInstance()
     }
 }
