@@ -42,13 +42,13 @@ class Constants {
 //            toast.show()
 //        }
 
-//        val Context.dataStore: DataStore<Preferences> by preferencesDataStore("save")
+        //        val Context.dataStore: DataStore<Preferences> by preferencesDataStore("save")
         lateinit var dialog: Dialog
         fun showCustomAlertDialog(
             context: Context,
             layout: Int,
             checkCancel: Boolean,
-            ) {
+        ) {
             dialog = Dialog(context)
             dialog.setContentView(layout)
             dialog.setCancelable(checkCancel)
