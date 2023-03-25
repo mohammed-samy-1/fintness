@@ -20,4 +20,10 @@
     <style name="ind" parent="Widget.Material3.NavigationRailView.ActiveIndicator">
         <item name="android:color">@color/white</item>
     </style>
+
+    <style name="ShapeAppearanceOverlayExtended" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">40dp</item>
+        <item name="backgroundColor">@drawable/button_auth_style</item>
+    </style>
 </resources>

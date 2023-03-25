@@ -7,6 +7,14 @@
     <string name="password">Password</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Workout</string>
+    <string name="title_notifications">Add</string>
+    <string name="profile">Profile</string>
+
+    <string-array name="GroupType">
+        <item>Select type of Group</item>
+        <item>Challenge Group</item>
+        <item>Support Group</item>
+
+    </string-array>
 </resources>

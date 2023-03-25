@@ -12,18 +12,18 @@
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_add"
         android:icon="@drawable/add"
         android:title="@string/title_notifications" />
 
     <item
         android:id="@+id/profile"
         android:icon="@drawable/profile"
-        android:title="@string/title_notifications" />
-    <item
-        android:id="@+id/profile2"
-        android:icon="@drawable/bell"
-        android:title="@string/title_notifications" />
+        android:title="@string/profile" />
+<!--    <item-->
+<!--        android:id="@+id/profile2"-->
+<!--        android:icon="@drawable/bell"-->
+<!--        android:title="@string/title_notifications" />-->
 
 
 
