@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.util.UUID
 
 @AndroidEntryPoint
 class AddFragment : Fragment() {
@@ -63,6 +64,7 @@ class AddFragment : Fragment() {
        val group = Group(name = binding.EditTextGroupName.text.toString(),
            description =binding.editTextDescription.text.toString(),
            type = binding.SpinnerGroupType.selectedItem.toString(),
+           id = UUID.randomUUID().toString()
 
 
         )

@@ -1,7 +1,7 @@
 package com.example.fitness.models
 
 data class Group(
-    val id: Int = -1,
+    val id: String = "",
     val name: String ="",
     val description: String = "",
     var image: String = "",
