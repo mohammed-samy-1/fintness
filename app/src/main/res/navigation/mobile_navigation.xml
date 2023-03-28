@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_add"
-        android:name="com.example.fitness.ui.ui.notifications.AddFragment"
+        android:name="com.example.fitness.ui.ui.add.AddFragment"
         android:label="New Group"
         tools:layout="@layout/fragment_add" />
     <fragment
