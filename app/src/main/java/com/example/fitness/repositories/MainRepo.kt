@@ -40,7 +40,7 @@ class MainRepo @Inject constructor(val mDatabase: FirebaseDatabase, val mStorage
             }
             emit(Status.Success(list))
         } catch (e: FirebaseException) {
-            emit(e.localizedMessage?.let { emit(Status.Error(it)) })
+            emit(Status.Error(e.message.toString()))
         }
     }
 }

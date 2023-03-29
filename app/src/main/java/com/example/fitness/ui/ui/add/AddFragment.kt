@@ -24,7 +24,7 @@ class AddFragment : Fragment() {
 
     private var _binding: FragmentAddBinding? = null
     private var imgUri: Uri? = null
-    val viewModel :AddViewModel by viewModels()
+    private val viewModel :AddViewModel by viewModels()
     lateinit var firebaseAuth:FirebaseAuth
 
     private val binding get() = _binding!!
@@ -75,11 +75,10 @@ class AddFragment : Fragment() {
 
        }
     }
-    fun getImage(){
+    private fun getImage(){
         val loadFile = registerForActivityResult(ActivityResultContracts.GetContent()) {
             if (it != null) {
                 imgUri = it
-
                 Glide.with(requireContext()).asBitmap().load(it).into(binding.imgGroup)
             }
 

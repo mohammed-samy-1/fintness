@@ -5,7 +5,7 @@ import com.example.fitness.models.Group
 
 
 data class GroupState(
-    val allGroups: List<Group>? = null,
+    val allGroups: List<Group> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
     val success : String? = null
