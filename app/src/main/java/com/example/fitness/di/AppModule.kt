@@ -2,6 +2,7 @@ package com.example.fitness.di
 
 import com.example.fitness.repositories.AuthRepo
 import com.example.fitness.repositories.MainRepo
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
@@ -15,12 +16,12 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun authRepo():AuthRepo{
-        return AuthRepo()
+    fun authRepo(auth: FirebaseAuth , mDatabase: FirebaseDatabase):AuthRepo{
+        return AuthRepo(auth , mDatabase)
     }
     @Provides
     @Singleton
-    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):AuthRepo{
+    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):MainRepo{
         return MainRepo(mDatabase, mStorage)
     }
 
@@ -31,5 +32,9 @@ object AppModule {
     @Provides
     fun storage():FirebaseStorage{
         return FirebaseStorage.getInstance()
+    }
+    @Provides
+    fun auth():FirebaseAuth{
+        return FirebaseAuth.getInstance()
     }
 }
