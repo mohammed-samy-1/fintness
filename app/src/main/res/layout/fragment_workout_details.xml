@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ui.WorkoutDetailsFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnBack4"
@@ -23,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/sportImg"
         android:layout_width="0dp"
         android:layout_height="175dp"
         android:layout_marginStart="8dp"
@@ -37,36 +43,36 @@
         tools:src="@tools:sample/backgrounds/scenic" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imgPlay"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/baseline_play_circle_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+        app:layout_constraintBottom_toBottomOf="@+id/sportImg"
+        app:layout_constraintEnd_toEndOf="@+id/sportImg"
+        app:layout_constraintStart_toStartOf="@+id/sportImg"
+        app:layout_constraintTop_toTopOf="@+id/sportImg" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/sportName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Jumping Jack"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintStart_toStartOf="@+id/sportImg"
+        app:layout_constraintTop_toBottomOf="@+id/sportImg" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txtDifAndCal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Easy | 360 Calories  burn"
         android:textColor="#B3FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="@+id/sportName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="@+id/sportName"
+        app:layout_constraintTop_toBottomOf="@+id/sportName" />
 
     <TextView
         android:id="@+id/textView12"
@@ -78,11 +84,11 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintStart_toStartOf="@+id/sportImg"
+        app:layout_constraintTop_toBottomOf="@+id/txtDifAndCal" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/txtDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -101,16 +107,21 @@
         android:text="How To Do It"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        tools:listitem="@layout/step_holder" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:listitem="@layout/step_holder"
+        android:id="@+id/recyclerSteps"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

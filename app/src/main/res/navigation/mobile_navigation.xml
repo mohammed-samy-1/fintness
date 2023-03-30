@@ -19,7 +19,11 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.fitness.ui.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_workoutDetailsFragment"
+            app:destination="@id/workoutDetailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_add"
@@ -39,5 +43,14 @@
         <argument
             android:name="type"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutDetailsFragment"
+        android:name="com.example.fitness.ui.ui.WorkoutDetailsFragment"
+        android:label="fragment_workout_details"
+        tools:layout="@layout/fragment_workout_details" >
+        <argument
+            android:name="sport"
+            app:argType="com.example.fitness.models.DataItem" />
     </fragment>
 </navigation>
