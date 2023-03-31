@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor() :ViewModel() {
+class LoginViewModel @Inject constructor(val authRepo: AuthRepo) :ViewModel() {
 
     suspend fun login(email:String, password:String){
         viewModelScope.launch {

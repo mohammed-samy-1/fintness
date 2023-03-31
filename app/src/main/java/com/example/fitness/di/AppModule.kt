@@ -3,6 +3,7 @@ package com.example.fitness.di
 import com.example.fitness.repositories.AuthRepo
 import com.example.fitness.repositories.MainRepo
 import com.example.fitness.utils.WebServices
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
@@ -21,12 +22,12 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun authRepo():AuthRepo{
-        return AuthRepo()
+    fun authRepo(auth: FirebaseAuth, mDatabase: FirebaseDatabase):AuthRepo{
+        return AuthRepo(auth , mDatabase)
     }
     @Provides
     @Singleton
-    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):AuthRepo{
+    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):MainRepo{
         return MainRepo(mDatabase, mStorage)
     }
 
@@ -73,5 +74,9 @@ object AppModule {
     @Singleton
     fun getJson():GsonConverterFactory{
         return GsonConverterFactory.create()
+    }
+    @Provides
+    fun auth():FirebaseAuth{
+        return FirebaseAuth.getInstance()
     }
 }
