@@ -25,11 +25,6 @@ object AppModule {
     fun authRepo(auth: FirebaseAuth, mDatabase: FirebaseDatabase):AuthRepo{
         return AuthRepo(auth , mDatabase)
     }
-    @Provides
-    @Singleton
-    fun MainRepo(mDatabase: FirebaseDatabase, mStorage: FirebaseStorage):MainRepo{
-        return MainRepo(mDatabase, mStorage)
-    }
 
     @Provides
     fun db():FirebaseDatabase{
