@@ -88,6 +88,8 @@
         android:layout_margin="8dp"
         tools:listitem="@layout/groupes_item_holder"/>
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

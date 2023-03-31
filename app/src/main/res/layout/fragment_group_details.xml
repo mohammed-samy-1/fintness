@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/txt_mempers" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textViewLeft"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -95,7 +95,7 @@
         android:drawableTint="@android:color/holo_red_dark"
         android:padding="10dp"
         android:paddingTop="14dp"
-        android:text="TextView"
+        android:text="Left Group"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -115,5 +115,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_mempers"
         app:layout_constraintVertical_bias="1.0"
-        tools:listitem="@layout/member_holder" />
+        tools:listitem="@layout/member_holder"
+        android:id="@+id/recyclerMembers"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

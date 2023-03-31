@@ -7,21 +7,20 @@
     tools:context=".ui.ui.add.AddFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/toolBar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/imgBack"
             android:layout_width="60dp"
             android:layout_height="50dp"
+            android:padding="12dp"
             android:src="@drawable/left_arrow"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:padding="12dp"
-            android:id="@+id/imgBack"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,15 +36,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
+        android:id="@+id/imgGroup"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolBar"
-        android:id="@+id/imgGroup"
         android:layout_marginTop="16dp"
         android:src="@drawable/upload_icon"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolBar" />
 
     <EditText
         android:id="@+id/EditTextGroupName"
@@ -60,9 +58,9 @@
         android:textColorHint="#4F4F4F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgGroup" />
+        app:layout_constraintTop_toBottomOf="@id/imgGroup"
+        app:layout_constraintVertical_bias="0.1" />
 
     <Spinner
         android:id="@+id/SpinnerGroupType"
@@ -72,14 +70,14 @@
         android:layout_marginTop="16dp"
         android:entries="@array/GroupType"
         android:padding="16dp"
-        app:layout_constraintVertical_bias="0.1"
+        android:popupBackground="@color/dark_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/EditTextGroupName"
-        tools:layout_editor_absoluteX="16dp"
-        android:popupBackground="@color/dark_grey"
-        />
+        app:layout_constraintVertical_bias="0.1"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
+        android:id="@+id/editTextDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -88,24 +86,33 @@
         android:hint="Description"
         android:inputType="textMultiLine"
         android:padding="16dp"
-        app:layout_constraintVertical_bias="0.1"
+        android:textColor="@color/white"
         android:textColorHint="#4F4F4F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/SpinnerGroupType"
-        tools:layout_editor_absoluteX="16dp"
-        android:textColor="@color/white"
-        android:id="@+id/editTextDescription"/>
+        app:layout_constraintVertical_bias="0.1"
+        tools:layout_editor_absoluteX="16dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
         android:backgroundTint="@color/white"
+        android:scaleType="center"
         android:src="@drawable/baseline_check_24"
         app:fabSize="mini"
-        android:scaleType="center"
-        android:id="@+id/btnUpload"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

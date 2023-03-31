@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
@@ -14,7 +17,7 @@ import com.example.fitness.models.Group
 import com.example.fitness.ui.auth.binding
 import com.example.fitness.utils.Constants
 
-class GroupsAdapter(var items: List<Group>) : RecyclerView.Adapter<GroupsAdapter.viewholder>() {
+class GroupsAdapter(var items: List<Group>,private val navController: NavController) : RecyclerView.Adapter<GroupsAdapter.viewholder>() {
 
     class viewholder(var binding:GroupesItemHolderBinding) :ViewHolder(binding.root){
 
@@ -45,7 +48,8 @@ class GroupsAdapter(var items: List<Group>) : RecyclerView.Adapter<GroupsAdapter
             val join = dialog.findViewById<Button>(R.id.btnJoin)
             val cancel = dialog.findViewById<Button>(R.id.btnCancel)
 
-            join.setOnClickListener {
+            join.setOnClickListener {view->
+             navController.navigate(R.id.insideGroupFragment)
                 dialog.dismiss()
             }
             cancel.setOnClickListener {

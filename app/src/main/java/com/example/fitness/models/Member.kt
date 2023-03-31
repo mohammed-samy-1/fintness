@@ -1,7 +1,7 @@
 package com.example.fitness.models
 
 data class Member(
-    val id:Int,
+    val id:Int?= null,
     val name:String,
-    val img:String
+    val img:Int
 )

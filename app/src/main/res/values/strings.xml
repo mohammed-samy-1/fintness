@@ -17,4 +17,10 @@
         <item>Support Group</item>
 
     </string-array>
+<string name="link1">https://mycrazygoodlife.com/10-minute-yoga-workout-for-beginners/</string>
+    <string name="link2">http://jamielasterfitness.blogspot.com/2013/09/30-day-yoga-challenge.html?m=1</string>
+    <string name="link3">https://www.youtube.com/playlist?list=PLui6Eyny-UzwxbWCWDbTzEwsZnnROBTIL</string>
+    <string name="link4">https://www.youtube.com/playlist?list=PLtQmcQeXvpL_zGhnKLJ_ujpbVifCN-Zxp</string>
+    <string name="link5">https://www.shapefit.com/exercise/toned-legs-30-days.html#:~:text=Some%20great%20and%20effective%20exercises%20to%20help%20you,comfort%20of%20your%20own%20home%20without%20any%20equipment.</string>
+
 </resources>

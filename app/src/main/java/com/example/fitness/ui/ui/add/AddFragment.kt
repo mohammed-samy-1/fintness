@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.fitness.R
 import com.example.fitness.databinding.FragmentAddBinding
 import com.example.fitness.models.Group
 import com.google.firebase.auth.FirebaseAuth
@@ -69,7 +72,13 @@ class AddFragment : Fragment() {
 
         viewModel.upload(group,imgUri!!)
         viewModel.stateGroup.collectLatest {
-           Toast.makeText(requireContext(), it.success, Toast.LENGTH_SHORT).show()
+            binding.progress.isVisible = it.isLoading
+            if (it.success!=null){
+                Toast.makeText(requireContext(), it.success, Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_navigation_add_to_navigation_home)
+            }
+
+
 
        }
     }
