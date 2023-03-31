@@ -60,13 +60,11 @@ class AddFragment : Fragment() {
         _binding = null
     }
 
-   suspend fun upload(){
+   private suspend fun upload(){
        val group = Group(name = binding.EditTextGroupName.text.toString(),
            description =binding.editTextDescription.text.toString(),
            type = binding.SpinnerGroupType.selectedItem.toString(),
            id = UUID.randomUUID().toString()
-
-
         )
 
         viewModel.upload(group,imgUri!!)

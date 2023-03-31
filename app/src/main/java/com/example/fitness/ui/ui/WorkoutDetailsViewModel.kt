@@ -20,7 +20,6 @@ class WorkoutDetailsViewModel @Inject constructor(val mainRepo: MainRepo): ViewM
     fun getSpecificSports(id:String) =viewModelScope.launch {
         mainRepo.getSpecificSports(id).collect{
             when(it){
-
                 is Status.Loading->{
                     _state.value = state.value.copy(
                         isLoading = true
